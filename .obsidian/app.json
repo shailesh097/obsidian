@@ -1,4 +1,4 @@
 {
-  "autoPairBrackets": false,
+  "autoPairBrackets": true,
   "vimMode": true
 }
