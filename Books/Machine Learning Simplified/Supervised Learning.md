@@ -36,14 +36,14 @@ Here, we are going to explain Step III by building a model that predicts the tar
 | 8.49   | 6.52   | Lemon      |
 | 7.44   | 7.89   | Apple      |
 | 7.86   | 7.60   | Apple      |
-	|3.93 | 6.12 | Apple |
-	| 4.40 | 5.90 | Mandarin |
-	| 5.50 | 4.5 | Lemon |
-	| 8.10 | 6.15 | Lemon |
-	| 8.69 | 5.82 | Lemon |
+| 3.93   | 6.12   | Apple      |
+| 4.40   | 5.90   | Mandarin   |
+| 5.50   | 4.5    | Lemon      |
+| 8.10   | 6.15   | Lemon      |
+| 8.69   | 5.82   | Lemon      |
 
 ##### 4.1. Problem Representaion
-There are two *features* present in our dataset -- height and width. The features is represented by $y$. In our case, $y=2$. These features can be represented by the vector $x=(x^{(1)},..x^{(p)})$. The superscript $x^{(j)}$ represents the $j^{th}$ input feature. The number of data points is represented by $n$. In the table above, there are twenty data points. So, $n=20$. And each datapoint is represented by $i$. Each data point $(i)$ is represented by the vector $x_i=(x_i^{(1)},..x_i^{(p)})$.
+There are two *features* present in our dataset -- height and width. The number of features per data point is represented by $p$. In our case, $p=2$. These features can be represented by the vector $x=(x^{(1)},..x^{(p)})$. The superscript $x^{(j)}$ represents the $j^{th}$ input feature. The number of data points is represented by $n$. In the table above, there are twenty data points. So, $n=20$. And each datapoint is represented by $i$. Each data point $(i)$ is represented by the vector $x_i=(x_i^{(1)},..x_i^{(p)})$.
 
 So, the vector for the $3^{rd}$ data point can be represented as:
 $$x_3=(x_3 ^{(1)},x_3 ^{(2)} )=(10.48,7.32)$$
