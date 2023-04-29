@@ -93,6 +93,114 @@ Here,
 ##### 5.2. Evulating on Train Data
 Evulating our prediction fucntion on the training dataset gives the *misclassification rate* $L(f,X,Y)=0$. Because, each $f(x_i)=y_i$. Therefore, $[f(x_i)\neq y_i]=0$ and $\frac0n$ is 0.
 
+##### 5.3. Evulating on Test Dataset
+| Height(cm) | Width(cm) | Actual Fruit | Prediction Error? |
+| ---------- | --------- | ------------ | ---------------- |
+| 4          | 6.5       | Mandarin     | 1                |
+| 4.7        | 7.13      | Mandarin     | 0                |
+| 6.49       | 7         | Apple        | 0                |
+| 7.51       | 5.01      | Lemon        | 1                |
+| 8.34       | 4.23      | Lemon        | 1                | 
+
+![Test Prediction](prediction_function_on_test.png)
+<center><i>Figure 2: Prediction graph for the test dataset.</i></center>
+
+Since, our prediction function predicted only 2 of 5 fruits correctly, the misclassification rate on the new batch of fruit is $\frac{3}{5}$. 
+$$L(f,X_{test},Y_{test})=\frac{3}{5}$$
+
+##### 5.4. Overfitting
+While evulating train data we got very low error(0% wrong). We got higher error on the test set(60 % wrong). This problem where the error is very low in the training set but much higher in an unseen data is known as *overfitting*.
+
+#### 6. Controlling Model Complexity
+A fundamental problem in ML is to learn a model which neither *overfits* nor *undrfits* the data. To achieve this for KNN classifier, we vary the value of $k$, the number of nearest neighbours used to classify a point.
+
+The figure below shows the misclassification error rate for every value of $k$ from 1 to n for both train and test data. Looking at the figure we find out that the value of $k$ should be between 3 and 7 -- both included -- for our model to optimally balance between overfitting and underfitting.
+
+![Prediction Error rate](misclassification-error-rate.png)
+<center><i>Figure 3: Misclassification Error Rate for Train and Test set for all values of k.</i></center>
+
+##### 6.1. ML Pipelile: General Form
+![Detailed ML Pipeline](detailed-pipeline.png)
+
+ **<u>Data Extraction:</u>**
+Extracting high quality data is important for our model to work optimally.
+
+**<u>Data Prepearation:</u>**
+The Model Building Stage(Step III) assumes that our data is in idealized form. Meaning, our dataset is a clean table with one row for each data point.
+
+- **Data Cleaning:**
+Uncleaned/Raw datasets often have missing values, improperly scaled measurements, erroneous or outlier data points or non-numeric data structure like strings which cannot be fed into ML algorithms. The goal of cleaning data is to convert the raw data into clean structured numeric format.
+
+- **Feature Design:**
+Feature design is the technique used to improve ML model's performance by combining raw features into new features removing irrelavant features. Following are the feature design paradigms:
+
+* **Feature Transformation:**
+Converting human readable data into machine-interpretable data. For example, converting *yes* and *no* to *1* and *0*
+
+* **Feature Engineering:**
+Process of combining raw dataset *features* to create a *new feature*. For example, on our fruit dataset, we can create a new feature as ratio of height to width of a fruit. Finding good features require a lot of trial and error.
+
+* **Feature Selection:**
+Process of identifying and removing the features that are not required to the prediction problem. Removing useless features ensures better performing model on unseen data.
+
+ **<u>Model Building:</u>**
+ After the pre-processing of data is complete we focus on building a good ML-model which predicts the label with less error on a new dataset.
+
+- **Algorithm Selection:**
+Next step is to select a *form* of prediction function $\hat f$. $\hat f$ should be chosen such that it accurately captures "true" function $f$. The "true" function $f$ is unknown. Different algorithms that we are going to further discuss are:
+1. Linear Polynomial Model
+2. Logit Model
+3. Bayesian Model
+4. Maximum margin Models
+5. Tree-based Models
+6. Ensemble Models
+
+ - **Loss Function Selection**
+ After selecting  a specific algorithm, we then need to decice on its loss funcion the method on which the algorithm would use to learn from data. For eg, a linear regression model uses least square error loss function.
+
+- **Model Learning**
+Next step is to train the ML model. In breif, learning is just finding the set of parameters which minimizes the loss function on the training data.
+ - **Model Evaluation**
+Evulating how well our trained model will perform on an unseen test dataset. In this process we split one large dataset into training and testing dataset and evulate how the model performs on test data. 
+
+- **Hyper-Parameter Tuning**
+The process of training a dataset that balances the problems of unerfitting and overfitting. It is not possible to know which hyper parametes will work best. It is the process of testing multiple hyper-parametrs and choosing the one which performed with less errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
