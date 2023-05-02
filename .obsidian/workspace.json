@@ -6,6 +6,7 @@
       {
         "id": "114c101abd23424b",
         "type": "tabs",
+        "dimension": 49.36034115138593,
         "children": [
           {
             "id": "a81e023d92010d7c",
@@ -24,6 +25,7 @@
       {
         "id": "e490e19461a0e9b6",
         "type": "tabs",
+        "dimension": 50.639658848614076,
         "children": [
           {
             "id": "6af6f7e65101f671",
@@ -87,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 278.5,
+    "collapsed": true
   },
   "right": {
     "id": "30837030fdbe39cf",
@@ -176,6 +179,13 @@
   },
   "active": "6af6f7e65101f671",
   "lastOpenFiles": [
+    "Books/Machine Learning Simplified/images/scatter-plot.png",
+    "Books/Machine Learning Simplified/images/residuals.png",
+    "Books/Machine Learning Simplified/images/prediction_function_on_test.png",
+    "Books/Machine Learning Simplified/images/misclassification-error-rate.png",
+    "Books/Machine Learning Simplified/images/detailed-pipeline.png",
+    "Books/Machine Learning Simplified/images",
+    "Books/Machine Learning Simplified/residuals.png",
     "Templates/Figure Description.md",
     "Books/Machine Learning Simplified/Supervised Learning.md",
     "Templates",
@@ -184,11 +194,6 @@
     "Books/Machine Learning Simplified/detailed-pipeline.png",
     "prediction_function_on_test.png",
     "misclassification-error-rate.png",
-    "detailed-pipeline.png",
-    "Pasted image 20230429150218.png",
-    "Books/Machine Learning Simplified/scatter-plot.png",
-    "Books/Machine Learning Simplified/scatter-pot.png",
-    "Books/Machine Learning Simplified/Screenshot from 2023-04-26 10-29-15.png",
     "Books/Machine Learning Simplified",
     "Books"
   ]
