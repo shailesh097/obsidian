@@ -177,8 +177,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6af6f7e65101f671",
+  "active": "a81e023d92010d7c",
   "lastOpenFiles": [
+    "Books/Machine Learning Simplified/images/cost_function_minimum_point.png",
+    "Templates/Evualte Equation.md",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
     "Books/Machine Learning Simplified/images/scatter-plot.png",
     "Books/Machine Learning Simplified/images/residuals.png",
     "Books/Machine Learning Simplified/images/prediction_function_on_test.png",
@@ -187,13 +190,11 @@
     "Books/Machine Learning Simplified/images",
     "Books/Machine Learning Simplified/residuals.png",
     "Templates/Figure Description.md",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
     "Templates",
     "Books/Machine Learning Simplified/prediction_function_on_test.png",
     "Books/Machine Learning Simplified/misclassification-error-rate.png",
     "Books/Machine Learning Simplified/detailed-pipeline.png",
     "prediction_function_on_test.png",
-    "misclassification-error-rate.png",
     "Books/Machine Learning Simplified",
     "Books"
   ]

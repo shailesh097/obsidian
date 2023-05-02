@@ -222,12 +222,60 @@ SSR(\hat f) &=\sum_{i=1}^{n}(y_i - \hat f(x_i))^2 \\
 \end{align}
 $$
 
-The lower the value of SSR, it is a better fit.
+The lower the value of SSR, it is a better fit. 
 
 
+##### Parameterized SSR
+Lets find the best possible value for $a$. Let us pretend that we know the value of $b$ as -18. So we have, $\hat f(x)=a.x-18$, a function with a single parameter $a$. The SSR function of parameter $a$ is,
 
+$$
+\begin{align}
+SSR(a) &= \sum_{i=1}^{n}(y_i-\hat f(x_i))^2 \\
+&=\sum_{i=1}^{n}(y_i-(a.x-18))^2
+\end{align}
+$$
 
+Lets evulate SSR for $a=0.7$ on the apartment dataset.
 
+$$
+\begin{align}
+SSR(a)&=\sum_{i=1}^{n}(y_i-(0.7x_i-18))^2 \\
+&=(31-(0.7*30 - 18))^2+.... \\
+&=10624.95
+\end{align}
+$$
+
+Now, lets plot the calculated SSR values over changing parameter $a$ on the graph where the x-axis is the value of a and y-axis is the SSR value. In mathematical optimization, we represent the erros with a *cost function* denoted as $J$. In other words, $SSR(a)=J(a)$.
+
+![Cost function minimum point](images/cost_function_minimum_point.png)
+<center><i>Figure 6: Minimum point in the cost function</i></center>
+
+Figure 6 shows that for the value of $a$=1.3 has the lowest possible value of $a$ in our dataset.
+
+#### 7.1.2 Gradient Descent Algorithm
+Now, we have to identify the best model, which is the model that produces the least possible value of the *cost function*. Mathematically,
+
+$$
+\begin{align}
+a^*&=\underset{a}{\arg \min} \hspace{3pt} J(a) \\
+&=\underset{a}{\arg \min}\sum_{i=1}^{n}(y_i-\hat f(x_i))^2
+\end{align}
+$$
+Where, $a^*$ is the value of $a$ that gives minimum cost from the function $J(a)$.
+
+In our case, $a^*$ = 1.3
+
+In this section, we will learn how to find the minimum possible value of $a$ using the *gradient descent algorithm*.
+
+In high level, a *gradient descent algorithm* starts with a random value of parameter $a$. It then finds the direction in which the function decreases the fastest and takes a *step* in that direction. It repeats the process of finding the direction of steepest descent and taking a step in that direction until it converges to the minimum value of the function.
+
+**Gradient Descent (with a single parameter)**
+1. Choose fixed learning rate $l$
+2. Initialize the parameter $a$ to an arbitrary value
+3. While termination condition is not matching,
+	- Compute $\frac{\partial y}{\partial x}$, derivative of cost funcion $J$ at value $a$.
+	- Take a step in the gradient direction scaled by the learning rate $l$.
+$$a_i=a_{i-1}-l\cdot \frac{\partial x}{\partial y}$$
 
 
 
