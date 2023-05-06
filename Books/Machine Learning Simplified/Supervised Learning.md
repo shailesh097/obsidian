@@ -486,13 +486,54 @@ Model performed approximately five times worse for the test set.
 
 **Fourth-degree and Fifth-degree Polynomial**
 
-| degree | $SSR_{training}$ | $SSR_{test}$ | $\sum$ |
+| degree | $SSR_{training}$ | $SSR_{test}$ | $\sum \lvert w_i \rvert$ |
 | ------ | ---------------- | ------------ | ------ |
 | 4      | 688.66           | 29379.05     | 945.20 |
 | 5      | 0.6              | 6718669.7    | 21849.22      |
 
 #### 8.1.2 Comparision of Model Weights
-highhhher the polynomial degree higher the weight terms $w$.
+Higher the polynomial degree higher the weight terms $w$.
+
+### 8.2 Regularization 
+The technique to decrease the complexity of a model is called *regularizaion*. In other words, we decrease the sum of weights which are higher in higher degree polynomial. Regularizaion constructs a *penalized loss function*.
+
+$$L_\lambda(w;X,Y)=L_D(w;X,Y)+\lambda \cdot R(w)$$
+Where,
+- $L_D$ &rarr; Data loss function thet measures goodness-of-fit
+- $R_w$ &rarr; Penalty term thhat penalizes complex models
+- $\lambda \ge 0$ &rarr; Parameter that controls strength of penalty
+
+#### 8.2.1 Ridge Regression
+$$R(w)=\sum_{j=1}^{d}w_j^2$$
+
+$R(w)$ or $L2$ computed the sum of squared values of the weights $w_i$.
+When,
+- $\lambda = 0$ &rarr; No effect
+- $\lambda$ is close to $0$, Model is close to the Ordinary Least Square(OLS) solution.
+- $\lambda \to \infty$ &rarr; penalty term dominates data term
+
+$$SSR_{L2}=\underset{\lambda \ge 0}{\arg \min}\sum_{i}(y_i-\hat f(x_i))^2 + \lambda \sum_{j=1}^{k}w_j^2$$
+
+#### 8.2.2 Choosing Regularization Strength $(\lambda)$
+
+$$\lambda^*=\underset{\lambda}{\arg \min}\hspace{5pt} \mathscr{L}(f_\theta(x_i),y_i) $$
+
+Learning is then performed with restricted loss function,
+
+$$\theta_\lambda^*=\underset{\theta \in S_\lambda}{\arg \min} \sum_{i=1}^{n} \mathscr{L}(f_\theta(x_i), y_i)$$
+Where,
+- $\lambda$ &rarr; Set of hyper-parameters
+- $S_\lambda$ &rarr; Set of allowable models restricted to these hyperparameters
+
+#### 8.2.3 Lasso Regressio
+
+$$R(w)=\sum_{j=1}^{d}\lvert w_j\rvert$$
+
+## 9. Model Selection
+In this chapter, we discuss about two models which helps in finding the optimal balanced model which neither underfits nor overfits the data.
+
+### 9.1 Bias-Variance Decomposition
+
 
 
 
