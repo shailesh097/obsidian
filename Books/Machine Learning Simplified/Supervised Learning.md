@@ -203,13 +203,19 @@ Where,
 ![Graph showing residuals](images/residuals.png)
 <center><i>Figure 5: Graph showing the residuals of each data point</i></center>
 
-In the figure above, for the data point C,
-$y_c$ = 80
-$\hat f(x_c)$ = 60 
+In the figure above, for the data point $c$,
 
-$r_c=y_c - \hat f(x_c)$
-$r_c=80-60$
-$r_c=20$
+$y_c = 80$ 
+$\hat f(x_c) = 60$
+
+Then, residue for the data point $c$ is,
+$$
+\begin{align}
+r_c&=y_c - \hat f(x_c)\\
+r_c&=80-60\\
+r_c&=20
+\end{align}
+$$
 
 So, the residual value for the data pont $c$ is 20.
 
@@ -252,7 +258,7 @@ Now, lets plot the calculated SSR values over changing parameter $a$ on the grap
 
 Figure 6 shows that for the value of $a$=1.3 has the lowest possible value of $a$ in our dataset.
 
-#### 7.1.2 Gradient Descent Algorithm
+#### 7.1.3 Gradient Descent Algorithm
 Now, we have to identify the best model, which is the model that produces the least possible value of the *cost function*. Mathematically,
 
 $$
@@ -269,7 +275,7 @@ In this section, we will learn how to find the minimum possible value of $a$ usi
 
 In high level, a *gradient descent algorithm* starts with a random value of parameter $a$. It then finds the direction in which the function decreases the fastest and takes a *step* in that direction. It repeats the process of finding the direction of steepest descent and taking a step in that direction until it converges to the minimum value of the function.
 
-**Gradient Descent (with a single parameter)**
+**<u>Gradient Descent (with a single parameter)</u>**
 1. Choose fixed learning rate $l$
 2. Initialize the parameter $a$ to an arbitrary value
 3. While termination condition is not matching,
@@ -277,16 +283,216 @@ In high level, a *gradient descent algorithm* starts with a random value of para
 	- Take a step in the gradient direction scaled by the learning rate $l$.
 $$a_i=a_{i-1}-l\cdot \frac{\partial x}{\partial y}$$
 
+**<u>Gradient Deviation</u>**
+Gradient of the cost function $J(a)$,
 
+$$
+\begin{align}
+J(a)&=\sum_{i=1}^{n}(y_i - (ax_i - 18))^2 \\
 
+\frac{\partial J}{\partial a} &= \frac{\partial}{\partial a} \cdot \sum_{i=1}^{n}(y_i-(ax_i-18))^2 \\
 
+&=\sum_{i=1}^{n} \cdot -2x_i(y_i-(ax_i-18))^2
 
+\end{align}
+$$
 
+Now, we illustrate the derivation of the gradient of the cost function at the current value of $a$.
 
+First, we expand the cost function for the data points,
+$$J(a)=(31-(a\cdot 30-18))^2+(30-(a\cdot 46-18))^2+...$$
+Now, we apply basic property of derivatives -- derivative of a sum of terms is equal to the sum of derivatives of the terms.
 
+$$\frac{\partial J}{\partial a}=\frac{\partial}{\partial a}\cdot (31-(a\cdot 30-18))^2+ \frac{\partial}{\partial a}\cdot(30-(a\cdot 46-18))^2+...$$
 
+Next, we calculate the derivative in each term, we apply the chain rule yielding,
 
+$$\frac{\partial J}{\partial a}=(-2.30)\cdot(31-(a\cdot 30-18)) + (-2.46)\cdot (30-(a\cdot46-18))+...$$
 
+**<u>Initialization and First Iteration</u>**
+Now, lets see how the gradient descent algorithm works on our example. The algorithm initializes the parameter $a$=0, corresponding to the initial model $\hat f(x)=0\cdot x-18$. The gradient of the cost function at the current point $a$=0 is, $\frac{\partial J}{\partial a}=-67218$.
+
+In other words, when $a$=0, the slope of the curve is equalt to -67218 as illustrated in Figure 7.
+
+![Slope of first iteration](images/first_iteration_slope.png)
+<center><i>Figure 7: Derivative at the first iteration</i></center>
+
+Then, we use gradient to update the parameter $a$,
+$$a_{new}=a-\frac{\partial J}{\partial a}\cdot l$$
+
+Note that the learning rate is usually set to a small value, such as $l=0.00001$. Now, the new value of $a$ can be calculated by,
+
+$$
+\begin{align}
+a_{new}&=0-(-6.7218)\cdot(0.00001) \\
+&=0.67218
+\end{align}
+$$
+
+**<u>Second Iteration</u>**
+$$
+\begin{align}
+\frac{\partial J}{\partial a}&=(-2.30)(32-(0.67218\cdot30-18))+...  \\
+&=-32540.2338
+\end{align}
+$$
+
+Then, 
+$$
+\begin{align}
+a_{new}&=0.67218-(-32540\cdot 2338)\cdot (0.00001) \\
+&=0.99758
+\end{align}
+$$
+
+**<u>Third Iteration</u>**
+$$\frac{\partial J}{\partial a}=-15752.7272$$
+$$a_{new}=1.15511$$
+
+**<u>Additional Iteration and Termination</u>**
+
+| Iteration | $\frac{\partial J}{\partial a}$ | Step size | $a$     |
+| --------- | ------------------------------- | --------- | ------- |
+| 1         | -67218.0000                     | -0.67218  | 0.67218 |
+| 5         | -3691.6959                      | -0.03692  | 1.26829 |
+| 10        | -98.1525                        | -0.00098  | 1.30201 |
+| 13        | -11.1354                        | -0.00011  | 1.30282 |
+| 15        | -2.6096                         | -0.00003  | 1.30294 |
+
+The closer we get to the optimal value of $a$ the smaller the step size gets. Furthermore,  at the minimum value of $a$ the derivative is exactly equal to $0$, hence, the step size is exactly equal to $0$ and then the gradient descent algorithm terminates.
+
+In parctice, the gradient descent algorithm will never obtain the exact optimum and exactly $0$ gradient. Instead, we provide a threshold for when the gradient descent algorithm terminates. For example, if we choose to terminate when the absolute value of a step size is less than $0.00005$, then the iteration terminates at $15^{th}$ iteration. 
+Another possible termination condition is to pre-specify a number of gradient descent iterations.
+
+**<u>Different Initialization</u>**
+Even if we specify a different initialization point we will still eventually find the optimum value.
+
+**<u>Learning Rate</u>**
+It is imperative to choose an appropriate learning rate. Choosing excessively small step size may lead the algorithm to converge slowly — which increases the processing time and choosing excessively large learning rate will cause the algorithm to jump back and forth the optimum value many times unnecessarily.
+
+**<u>Stochastic Gradient Descent</u>**
+The gradient descent algorithm that we learnt is called *batch gradient descent*. Since, we have to touch all the data points in the batch, the cost of touching each data point is very large.
+
+The *Stochastic Gradient Descent(SGD)* algorithm utilizes a low-cost approximation to the gradient. It touches only a single data point.
+
+$$\theta := \theta-\triangledown_\theta J(\theta; x_i, y_i)\cdot l$$
+
+At a data point index $i$, where $i$ is choosen randomly at each iteration. Since, the datapoint is choosen at random, each datapoint will eventually participate in the learning process.
+
+However, the gradient at a single point might be an inaccurate representation of full data-set. In practice, to maintain both speed and accuracy the gradient is computed in a *mini-batch* consisting $k>1$ samples. Where $k$ is a hyper-parameter typically between $k=10$ to $k=1000$. The mini-batch update is,
+
+$$\theta=\theta-\triangledown_\theta J(\theta; x_{i:i+k-1};y_{i:i+k-1})\cdot l$$
+
+#### 7.1.4 Gradient Descent with More Parameters
+If both parameters $a$ and $b$ are unknown, we can use the previous algorithm with slighht modification to compute $a$ and $b$.
+
+Gradient with respect to the parameter $a$ when $b$ is held fixed,
+$$\frac{\partial J}{\partial a}=\sum_{i=1}^{n}2\cdot x_i\cdot(y_i-(ax_i-b))$$
+
+Gradient with respect to the parameter $b$ when $a$ is held fixed,
+$$\frac{\partial J}{\partial b}=\sum_{i=1}^{n}-2\cdot(y_i-(ax_i-b))$$
+
+In higher dimentional cases, the cost-function cannot be visualized easily. However, the gradient descent algorithm can be applied in just thhe same way.
+
+### 7.2  Gradient Descent in Other ML Model
+Gradient Descent algorithm is not specific to this particular model or cost functions. Different types of ML Models i.e Neural Networks  produce different types of optimizaion problem but still the Gradient Descent algorithm can be applied to it. The main goal of Gradient Descent Algorithm is to find the driection of the steepest descent and take a step towards it.
+
+**Convex and Non-convex Cost Function**
+When plotted, a convex cost function is oriented upwards, which looks like a half circle or an oval, while non-convex cost function hhas at least one interior angle that is greater than $180\degree$. 
+
+![](images/convex_gradient.png)
+<center><i>Figure 8: Gradient Descent on Convex Function</i></center>
+
+![](images/non-convex_gradient.png)
+<center><i>Figure 9: Gradient Descent on Non-convex Function</i></center>
+
+For non-convex cost function with two parameters, there are 3 types of critical points that have gradient 0, and thus relavent to the optimizaion
+- Saddle Point &rarr; Plateu-like regions
+- Local Minima &rarr; Smallest values of the function within a specific range
+- Global Minima &rarr; Smallest values of the function within the whole domain.
+
+The objective of the Gradient Descent is to find the optimal value, which is any global minimum point.
+
+#### 7.2.1 Getting Stuck in a Local Minimum
+One of the solutions to get out of the local minima is to increase the learning rate, because of larger step size, it increases the probablity of not getting stuck in a local minima.
+
+However, choosing very high learning rate can lead to another problem — overshooting global minimum.
+
+#### 7.2.2 Overshooting Global Minimum
+![](images/local_global_solution.png)
+
+In reality, there is no exact solution to this problem. But there are different methods that have proven to work well in finding the global minimum or move to better local minimum. These methods are:
+- Using another Gradient Descent Algorithm such as (Stochastic Gradient Descent, Mini Batch Gradient Descent, Momentum-based Gradient Descent, Nesterov Accelerated Gradient Descent)
+- Using different step size by adjusting the learning rate.
+
+#### 7.2.3 Non-differentiable Cost Function
+Gradient Descent requires taking the derivative of the cost function. However, we should keep in mind that not all functions are differentiable.
+
+## 8. Basis Expansion and Regulation
+This chapter focuses on modifying the regression and the cost function as a way to change its complexity.
+### 8.1 Basis Expansion
+Basis expansion is a powerful technique which adds non-linear features into the model. Then linear regression can be applied directly into the dataset to learn the coefficient of the non-linear term.
+
+#### 8.1.1 Polynomial Basis Expansion
+We have train and test data of housing with area as feature and price as target variable. We will now learn a polynomial model instead of linear model. 
+
+The degree of polynomial is the largest power of $x$ in the function $f(x)$. So, a $n^{th}$ degree polynomial can be represented as,
+
+$$f(x)=w_0+w_1x+w_2x^2+...+w_nx^n$$
+
+Where, $w_x$ is a real-value (eg. w=5)
+
+Now, we will create and fit 3 different degree of polynomial functions. For each polynomial,
+- Fit the function to the training set
+- Use the function to predict values for training and testing data set
+- Use the predicted values to calculate the SSR for train and test dataset.
+
+**Second-Degree Polynomial**
+Lets fit a second degree polynomial function $f(x_i)=w_0+w_1x_i+w_2x_i^2$.
+
+Now, we have to find the minimum values of $w_0, w_1, w_2$ parameters.
+
+$$\underset{w_0,w_1,w_2}{\min} \sum_{i=1}^{n}(y_i - (w_0+w_1x_i+w_2x_i^2))^2$$
+
+Now, we use gradient descent to find the weights that give the minimum SSR.
+
+Final weights will be, $w_0=3.19, w_1=-0.5, w_2=0.014$.
+
+Check our model for datapont $a$,
+
+$$
+\begin{align}
+\hat f(x_a)&=w_0+w_1x_a+w_2x_a^2 \\
+&=31.9-0.5\cdot 30+ 0.014\cdot (30)^2 \\
+&= 29.5
+\end{align}
+$$
+
+So, $x_a=295,000$ and $y_a=310,000$. Therefore, Error = $15,000$
+
+Now, calculate the $SSR_{training}$
+
+$$
+\begin{align}
+SSR_{training}&=\sum_{i=1}^{n}(y_i-\hat f(x_i))^2 \\
+&=1027.0004
+\end{align}
+$$
+
+For the test set, 
+$$SSR_{test}=1757.08$$
+
+Model performed approximately five times worse for the test set.
+
+**Fourth-degree and Fifth-degree Polynomial**
+
+| degree | $SSR_{training}$ | $SSR_{test}$ | $\sum$ |
+| ------ | ---------------- | ------------ | ------ |
+| 4      | 688.66           | 29379.05     | 945.20 |
+| 5      | 0.6              | 6718669.7    | 21849.22      |
+
+#### 8.1.2 Comparision of Model Weights
+highhhher the polynomial degree higher the weight terms $w$.
 
 
 

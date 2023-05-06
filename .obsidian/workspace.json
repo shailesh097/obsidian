@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "114c101abd23424b",
+        "id": "e490e19461a0e9b6",
         "type": "tabs",
-        "dimension": 49.36034115138593,
+        "dimension": 49.74968710888611,
         "children": [
           {
-            "id": "a81e023d92010d7c",
+            "id": "6af6f7e65101f671",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -23,12 +23,12 @@
         ]
       },
       {
-        "id": "e490e19461a0e9b6",
+        "id": "a8532eb4ae80899d",
         "type": "tabs",
-        "dimension": 50.639658848614076,
+        "dimension": 50.25031289111389,
         "children": [
           {
-            "id": "6af6f7e65101f671",
+            "id": "0ea280a92f44be89",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -82,6 +82,14 @@
             "type": "leaf",
             "state": {
               "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "40696a27790dba4f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {}
             }
           }
@@ -177,11 +185,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a81e023d92010d7c",
+  "active": "6af6f7e65101f671",
   "lastOpenFiles": [
+    "Books/Machine Learning Simplified/images/local_global_solution.png",
+    "Books/Machine Learning Simplified/images/non-convex_gradient.png",
+    "Books/Machine Learning Simplified/images/convex_gradient.png",
+    "Templates/Aligned Equation.md",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
+    "Books/Machine Learning Simplified/images/first_iteration_slope.png",
     "Books/Machine Learning Simplified/images/cost_function_minimum_point.png",
     "Templates/Evualte Equation.md",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
     "Books/Machine Learning Simplified/images/scatter-plot.png",
     "Books/Machine Learning Simplified/images/residuals.png",
     "Books/Machine Learning Simplified/images/prediction_function_on_test.png",
@@ -191,10 +204,6 @@
     "Books/Machine Learning Simplified/residuals.png",
     "Templates/Figure Description.md",
     "Templates",
-    "Books/Machine Learning Simplified/prediction_function_on_test.png",
-    "Books/Machine Learning Simplified/misclassification-error-rate.png",
-    "Books/Machine Learning Simplified/detailed-pipeline.png",
-    "prediction_function_on_test.png",
     "Books/Machine Learning Simplified",
     "Books"
   ]
