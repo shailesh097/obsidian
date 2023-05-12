@@ -6,7 +6,7 @@
       {
         "id": "e490e19461a0e9b6",
         "type": "tabs",
-        "dimension": 49.74968710888611,
+        "dimension": 51.865671641791046,
         "children": [
           {
             "id": "6af6f7e65101f671",
@@ -25,7 +25,7 @@
       {
         "id": "a8532eb4ae80899d",
         "type": "tabs",
-        "dimension": 50.25031289111389,
+        "dimension": 48.134328358208954,
         "children": [
           {
             "id": "0ea280a92f44be89",
@@ -187,21 +187,22 @@
   },
   "active": "6af6f7e65101f671",
   "lastOpenFiles": [
+    "Books/Machine Learning Simplified/images/bias_complexity_relation.png",
+    "Books/Machine Learning Simplified/images/variance_complexity_relation.png",
+    "Books/Machine Learning Simplified/images/model_error.png",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
+    "Templates/Space.md",
     "Books/Machine Learning Simplified/images/local_global_solution.png",
     "Books/Machine Learning Simplified/images/non-convex_gradient.png",
     "Books/Machine Learning Simplified/images/convex_gradient.png",
     "Templates/Aligned Equation.md",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
     "Books/Machine Learning Simplified/images/first_iteration_slope.png",
     "Books/Machine Learning Simplified/images/cost_function_minimum_point.png",
     "Templates/Evualte Equation.md",
     "Books/Machine Learning Simplified/images/scatter-plot.png",
     "Books/Machine Learning Simplified/images/residuals.png",
     "Books/Machine Learning Simplified/images/prediction_function_on_test.png",
-    "Books/Machine Learning Simplified/images/misclassification-error-rate.png",
-    "Books/Machine Learning Simplified/images/detailed-pipeline.png",
     "Books/Machine Learning Simplified/images",
-    "Books/Machine Learning Simplified/residuals.png",
     "Templates/Figure Description.md",
     "Templates",
     "Books/Machine Learning Simplified",

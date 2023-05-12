@@ -134,13 +134,13 @@ Uncleaned/Raw datasets often have missing values, improperly scaled measurements
 - **Feature Design:**
 Feature design is the technique used to improve ML model's performance by combining raw features into new features removing irrelavant features. Following are the feature design paradigms:
 
-* **Feature Transformation:**
+- **Feature Transformation:**
 Converting human readable data into machine-interpretable data. For example, converting *yes* and *no* to *1* and *0*
 
-* **Feature Engineering:**
+- **Feature Engineering:**
 Process of combining raw dataset *features* to create a *new feature*. For example, on our fruit dataset, we can create a new feature as ratio of height to width of a fruit. Finding good features require a lot of trial and error.
 
-* **Feature Selection:**
+- **Feature Selection:**
 Process of identifying and removing the features that are not required to the prediction problem. Removing useless features ensures better performing model on unseen data.
 
  **<u>Model Building:</u>**
@@ -525,7 +525,7 @@ Where,
 - $\lambda$ &rarr; Set of hyper-parameters
 - $S_\lambda$ &rarr; Set of allowable models restricted to these hyperparameters
 
-#### 8.2.3 Lasso Regressio
+#### 8.2.3 Lasso Regression
 
 $$R(w)=\sum_{j=1}^{d}\lvert w_j\rvert$$
 
@@ -533,23 +533,142 @@ $$R(w)=\sum_{j=1}^{d}\lvert w_j\rvert$$
 In this chapter, we discuss about two models which helps in finding the optimal balanced model which neither underfits nor overfits the data.
 
 ### 9.1 Bias-Variance Decomposition
+At high level, Bias-Variance Decomposition decomposes error as:
 
+$$
+\begin{align}
+Error&=Irreducible \hspace{3pt}Error + Reducible \hspace{3pt}Error \\
+&=Irreducible \hspace{3pt}Error + (Bias \hspace{3pt}Error + Variance \hspace{3pt}Error)
+\end{align}
+$$
 
+![](images/model_error.png)
+<center><i> Figure 11: Model error as a function of model complexity</i></center>
 
+- **Irreducible Error:** Errors which inherit in the problem which cannot be reduced by any model.
+- **Reducible Error:** Errors which can be reduced by a model.
+	- **Bias Error:**  Bias error is large when model has low complexity, then the error monotonically decreases as the model complexity increases. It indicates the extent to which a model underfits a data.
+ 
+	- **Variance Error:** Variance error is small when the complexity of the model is low. However, the error increases as the complexity of the model increases. It indicates the extent to which a model overfits  a data.
 
+#### 9.1.1 Mathematical Definition of Bias-Variance Decomposition
+We assume the response variable $y$ can be written as $y=f(x)+\varepsilon$ for a given input vector $x$.
 
+Where, 
+- $f$ &rarr; true deterministic function
+- $\varepsilon$ &rarr; noise random variable with mean zero
+- $\sigma$ &rarr; variance(representing irreducible error)
 
+The Bias-Variance Decomposition analyzes the mean-squared error of a function $\hat f$ fit to finite sample of $n$ training points. It measures the error by taking an average of the fit $\hat f$ over random dataset with size $n$. It is written as,
 
+$$MSE=E[(y-\hat f(x))^2]$$
 
+Where,
+- $E$ &rarr; Expection operator averages over everything that is random in the ift — all possible training set size $N$ and noise in response variable.
 
+We then write, 
 
+$$
+\begin{align}
+E[(y-\hat f(x))^2+\varepsilon]&=E[((f(x)+\varepsilon)-\hat f(x))^2]  \\
+&=E[((f(x)-\hat f(x))+\varepsilon)^2]
+\end{align}
+$$
 
+Then, we isolate the reducible and irreducible components of the error by,
 
+$$
+\begin{align}
+E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+ E[\varepsilon^2]  \\
 
+&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot \underbrace{E[\varepsilon]}_{=0} + \underbrace{E[\varepsilon^2]}_{=\sigma^2} \\
 
+&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt} error}+\underbrace{\sigma^2}_{irreducible \hspace{3pt} error}
+\end{align}
+$$
 
+Reducible error can be further decomposed into bias and variance error component,
 
+$$
+\begin{align}
+E[(f(x)-\hat f(x))^2]&=E[((f(x)-E[\hat f(x)])-(\hat f(x)-E[\hat f(x)]))^2]  \\
+\end{align}
+$$
 
+Where, we subtracted $E[\hat f(x)]$ from one term and added it to another inside parenthesis.
+Then,
+
+$$
+\begin{align}
+&=\underbrace{[(f(x)-E[\hat f(x)])^2]}_{Bias(\hat f(x))^2}+ \underbrace{E[\hat f(x)-E[\hat f(x)])^2]}_{Var(\hat f(x))}-2E[(f(x)-E[\hat f(x)])\cdot(\hat f(x)-E[\hat f(x)])] \\
+
+&=Bias(\hat f(x))^2 + Var(\hat f(x))-2(f(x)-E[\hat f(x)])\cdot \underbrace{(E(\hat f(x)-E[\hat f(x)]))}_{=0} \\
+
+&=Bias(\hat f(x))^2 + Var(\hat f(x))
+\end{align}
+$$
+
+Therefore, we have,
+
+$$
+\begin{align}
+MSE&=\underbrace{E[f(x)-\hat f(x))^2]}_{Reducible \hspace{3pt}error}+ \underbrace{\sigma^2}_{Irreducible \hspace{3pt}error} \\
+&=Bias(\hat f(x))^2 + Var(\hat f(x)) + \sigma^2
+\end{align}
+$$
+
+**Illustration:**
+![](images/variance_complexity_relation.png)
+<center><i>Figure 12: Relationship of variance  with the model complexity</i></center>
+
+Where,
+- $d$ &rarr; polynomial degree
+
+$\hat f^{orange}$ and $\hat f^{blue}$ are similar at low complexity and are very different for high complexity.
+
+#### 9.1.2 Diagnosing Bias & Variance Error Sources
+In a model, we often try to diagnose if its dominant error source is bias error or variance error. For example, these phrases are common to hear,
+- “Increasing model’s accuracy on the training set” &rarr; We want to decrease bias & increase variance. We do this on the model we suspect to be undefitting. 
+- “Making model more generic” &rarr; Decreasing variance and increasing bias. We do this if the model is overfitting.
+
+Bias can be decreased by making model more complex, we can achiece this by, 
+- Choosing a more complex functional for $n$ for $\hat f$. (e.g. higher degree polynomial)
+- Develop better features from existing features
+- Measure new features
+
+Variance can be decreased by:
+- Collecting and labeling more data.
+- Feature selection(identify and drop irrelevant features).
+
+### 9.2 Validation Method
+In practical world, thhe bias & variance components cannot be measured directly. Therefore, we learn about the *empirical* methods to access our model’s performance.
+
+![](images/bias_complexity_relation.png)
+<center><i>Figure 13: Relation of the bias error to the model’s complexity. Bias error decreases as the model’s complexity increases</i></center>
+
+#### 9.2.1 Hold-out Validation
+In hold-out validation we split the data into training and testing set. Usually 80% training set and 20% testing set.
+
+Two shortcomings of hold-out validation for small dataset:
+- Losing data for model training
+- Skewed training and test set: Maybe the data you seperated for testing may contain the highest values or the lowest values whichh may not propperly represent te range of values.
+
+#### 9.2.2 Cross Validation
+In cross validation, entire dataset is used for train and test purpose using the following cross validation methods.
+
+**K-Fold Cross Validation:**
+- First, randomly shuffle the dataset and split it into $K$ folds.
+- For eac unique fold,
+	- One fold is made test data.
+	- Other remaing folds are concatinated to make the train data.
+	- Evulate te trained model on the test fold, score its score, & discard the learned model.
+- Estimate the generalization performance of the model as, $\hat {err}=sum_{k=1}^K \hat {err}_k$, the average of errors on each folds.
+
+**Leave-one-out Cross Validation:**
+In extreme case, we can perform (LOOCV) which is equivalent to n-fold cross validation. Where we create only one data point as a test data and train $n$ number of models.
+
+**Leave-p-out Cross Validation:**
+In (LOOCV) we use one data point as testing set. However, in LpOCV we use a $p$ set of data as training set
 
 
 
