@@ -571,7 +571,7 @@ We then write,
 $$
 \begin{align}
 E[(y-\hat f(x))^2+\varepsilon]&=E[((f(x)+\varepsilon)-\hat f(x))^2]  \\
-&=E[((f(x)-\hat f(x))+\varepsilon)^2]
+&=E[((f(x)-\hat f(x))+\varepsilon)^2] \\
 \end{align}
 $$
 
@@ -580,8 +580,8 @@ Then, we isolate the reducible and irreducible components of the error by,
 $$
 \begin{align}
 E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+E[\varepsilon^2]  \\
-&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot\underbrace{E[\varepsilon]}_{=0}+\underbrace{E[\varepsilon^2]}_{=\sigma^2} \\
-&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt}error}+\underbrace{\sigma^2}_{irreducible\hspace{3pt}error}
+&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot\underbrace{E[\varepsilon]}_{=0}+\underbrace{E[\varepsilon^2]}_{=\sigma^2}  \\
+&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt}error}+\underbrace{\sigma^2}_{irreducible\hspace{3pt}error} \\
 \end{align}
 $$
 
