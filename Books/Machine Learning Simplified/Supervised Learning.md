@@ -579,11 +579,9 @@ Then, we isolate the reducible and irreducible components of the error by,
 
 $$
 \begin{align}
-E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+ E[\varepsilon^2]  \\
-
-&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot \underbrace{E[\varepsilon]}_{=0} + \underbrace{E[\varepsilon^2]}_{=\sigma^2} \\
-
-&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt} error}+\underbrace{\sigma^2}_{irreducible \hspace{3pt} error}
+E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+E[\varepsilon^2]  \\
+&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot\underbrace{E[\varepsilon]}_{=0}+\underbrace{E[\varepsilon^2]}_{=\sigma^2} \\
+&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt}error}+\underbrace{\sigma^2}_{irreducible\hspace{3pt}error}
 \end{align}
 $$
 
@@ -601,9 +599,7 @@ Then,
 $$
 \begin{align}
 &=\underbrace{[(f(x)-E[\hat f(x)])^2]}_{Bias(\hat f(x))^2}+ \underbrace{E[\hat f(x)-E[\hat f(x)])^2]}_{Var(\hat f(x))}-2E[(f(x)-E[\hat f(x)])\cdot(\hat f(x)-E[\hat f(x)])] \\
-
 &=Bias(\hat f(x))^2 + Var(\hat f(x))-2(f(x)-E[\hat f(x)])\cdot \underbrace{(E(\hat f(x)-E[\hat f(x)]))}_{=0} \\
-
 &=Bias(\hat f(x))^2 + Var(\hat f(x))
 \end{align}
 $$
