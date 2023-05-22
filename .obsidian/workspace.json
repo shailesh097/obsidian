@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e490e19461a0e9b6",
+        "id": "a8532eb4ae80899d",
         "type": "tabs",
-        "dimension": 52.66524520255863,
         "children": [
           {
-            "id": "6af6f7e65101f671",
+            "id": "0ea280a92f44be89",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -23,12 +22,11 @@
         ]
       },
       {
-        "id": "a8532eb4ae80899d",
+        "id": "1789cc45e714ff3a",
         "type": "tabs",
-        "dimension": 47.33475479744136,
         "children": [
           {
-            "id": "0ea280a92f44be89",
+            "id": "eb56c1a912d1e791",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -185,25 +183,27 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6af6f7e65101f671",
+  "active": "0ea280a92f44be89",
   "lastOpenFiles": [
+    "Books/Machine Learning Simplified/images/car_dataset.png",
+    "Templates/Figure Description.md",
+    "Templates/Underlined Heading.md",
+    "Untitled",
+    "Templates/Space.md",
+    "Templates/Evualte Equation.md",
+    "Templates/Aligned Equation.md",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
     "Books/Machine Learning Simplified/images/bias_complexity_relation.png",
     "Books/Machine Learning Simplified/images/variance_complexity_relation.png",
     "Books/Machine Learning Simplified/images/model_error.png",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
-    "Templates/Space.md",
     "Books/Machine Learning Simplified/images/local_global_solution.png",
     "Books/Machine Learning Simplified/images/non-convex_gradient.png",
     "Books/Machine Learning Simplified/images/convex_gradient.png",
-    "Templates/Aligned Equation.md",
     "Books/Machine Learning Simplified/images/first_iteration_slope.png",
     "Books/Machine Learning Simplified/images/cost_function_minimum_point.png",
-    "Templates/Evualte Equation.md",
     "Books/Machine Learning Simplified/images/scatter-plot.png",
     "Books/Machine Learning Simplified/images/residuals.png",
-    "Books/Machine Learning Simplified/images/prediction_function_on_test.png",
     "Books/Machine Learning Simplified/images",
-    "Templates/Figure Description.md",
     "Templates",
     "Books/Machine Learning Simplified",
     "Books"

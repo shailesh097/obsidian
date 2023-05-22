@@ -1,4 +1,5 @@
 There are two types of problems in supervised learning:
+ooooooooooooooooooooooooo
 - Regression
 - Classification
 
@@ -17,7 +18,7 @@ There are 4 major steps in the machhine learning pipelines:
 - Step IV &rarr; Model Deployment
 
 ## 4. ML Pipeline: Example
-Here, we are going to explain Step III by building a model that predicts the target variable -- type of a fruit -- based on its features -- height and width. We are given a synthetic table: 
+Here, we are going to explain Step III by building a model that predicts the target variable — type of a fruit — based on its features — height and width. We are given a synthetic table: 
 
 | Height | Weight | Fruit Type |
 | ------ | ------ | ---------- |
@@ -43,7 +44,7 @@ Here, we are going to explain Step III by building a model that predicts the tar
 | 8.69   | 5.82   | Lemon      |
 
 ### 4.1. Problem Representaion
-There are two *features* present in our dataset -- height and width. The number of features per data point is represented by $p$. In our case, $p=2$. These features can be represented by the vector $x=(x^{(1)},..x^{(p)})$. The superscript $x^{(j)}$ represents the $j^{th}$ input feature. The number of data points is represented by $n$. In the table above, there are twenty data points. So, $n=20$. And each datapoint is represented by $i$. Each data point $(i)$ is represented by the vector $x_i=(x_i^{(1)},..x_i^{(p)})$.
+There are two *features* present in our dataset — height and width. The number of features per data point is represented by $p$. In our case, $p=2$. These features can be represented by the vector $x=(x^{(1)},..x^{(p)})$. The superscript $x^{(j)}$ represents the $j^{th}$ input feature. The number of data points is represented by $n$. In the table above, there are twenty data points. So, $n=20$. And each datapoint is represented by $i$. Each data point $(i)$ is represented by the vector $x_i=(x_i^{(1)},..x_i^{(p)})$.
 
 So, the vector for the $3^{rd}$ data point can be represented as:
 $$x_3=(x_3 ^{(1)},x_3 ^{(2)} )=(10.48,7.32)$$
@@ -143,17 +144,17 @@ Process of combining raw dataset *features* to create a *new feature*. For examp
 - **Feature Selection:**
 Process of identifying and removing the features that are not required to the prediction problem. Removing useless features ensures better performing model on unseen data.
 
- **<u>Model Building:</u>**
+**<u>Model Building:</u>**
  After the pre-processing of data is complete we focus on building a good ML-model which predicts the label with less error on a new dataset.
 
 - **Algorithm Selection:**
 Next step is to select a *form* of prediction function $\hat f$. $\hat f$ should be chosen such that it accurately captures "true" function $f$. The "true" function $f$ is unknown. Different algorithms that we are going to further discuss are:
-1. Linear Polynomial Model
-2. Logit Model
-3. Bayesian Model
-4. Maximum margin Models
-5. Tree-based Models
-6. Ensemble Models
+	1. Linear Polynomial Model
+	2. Logit Model
+	3. Bayesian Model
+	4. Maximum margin Models
+	5. Tree-based Models
+	6. Ensemble Models
 
  - **Loss Function Selection**
  After selecting  a specific algorithm, we then need to decice on its loss funcion the method on which the algorithm would use to learn from data. For eg, a linear regression model uses least square error loss function.
@@ -543,7 +544,7 @@ Error&=Irreducible \hspace{3pt}Error + Reducible \hspace{3pt}Error \\
 $$
 
 ![](images/model_error.png)
-<center><i> Figure 11: Model error as a function of model complexity</i></center>
+<center><i> Figure 11: Model error as a function of model complexity</i></center><br>
 
 - **Irreducible Error:** Errors which inherit in the problem which cannot be reduced by any model.
 - **Reducible Error:** Errors which can be reduced by a model.
@@ -570,8 +571,8 @@ We then write,
 
 $$
 \begin{align}
-E[(y-\hat f(x))^2+\varepsilon]&=E[((f(x)+\varepsilon)-\hat f(x))^2]  \\
-&=E[((f(x)-\hat f(x))+\varepsilon)^2] \\
+E[(y-\hat f(x))^2+\varepsilon]&=E[((f(x)+\varepsilon)-\hat f(x))^2]\\
+&=E[((f(x)-\hat f(x))+\varepsilon)^2]
 \end{align}
 $$
 
@@ -579,9 +580,9 @@ Then, we isolate the reducible and irreducible components of the error by,
 
 $$
 \begin{align}
-E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+E[\varepsilon^2]  \\
-&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot\underbrace{E[\varepsilon]}_{=0}+\underbrace{E[\varepsilon^2]}_{=\sigma^2}  \\
-&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt}error}+\underbrace{\sigma^2}_{irreducible\hspace{3pt}error} \\
+E[((f(x)-\hat f(x))+\varepsilon)^2]&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)\cdot\varepsilon]+E[\varepsilon^2]\\
+&=E[(f(x)-\hat f(x))^2]+2E[f(x)-\hat f(x)]\cdot\underbrace{E[\varepsilon]}_{=0}+\underbrace{E[\varepsilon^2]}_{=\sigma^2}\\
+&=\underbrace{E[(f(x)-\hat f(x))^2]}_{reducible\hspace{3pt}error}+\underbrace{\sigma^2}_{irreducible\hspace{3pt}error}
 \end{align}
 $$
 
@@ -654,7 +655,7 @@ In cross validation, entire dataset is used for train and test purpose using the
 
 **K-Fold Cross Validation:**
 - First, randomly shuffle the dataset and split it into $K$ folds.
-- For eac unique fold,
+- For each unique fold,
 	- One fold is made test data.
 	- Other remaing folds are concatinated to make the train data.
 	- Evulate te trained model on the test fold, score its score, & discard the learned model.
@@ -666,8 +667,91 @@ In extreme case, we can perform (LOOCV) which is equivalent to n-fold cross vali
 **Leave-p-out Cross Validation:**
 In (LOOCV) we use one data point as testing set. However, in LpOCV we use a $p$ set of data as training set
 
+### 9.3 Unrepresentative Data
+Most of the machine learning algorothms algorithms assume that the data is independently and identically distributed(i.i.d). The data that violates i.i.d is called unrepresentative data.
 
+## 10. Feature Selection
+Feature selection is useful for tow reasons,
+- It can prevent ML algorithms from learning learning co-relation with irrelevant features. i.e it reduces overfitting.
+- It converts the features to human intrepretable model.
 
+There are 3 different groups of feature selection techinques:
+- Filter Methods
+- Search Methods
+- Embedded Methods
 
+### 10.1 Filter Methods
+Filter methods technique removes featurs before performing any learning. This technique computes a statistical measure of the relavance of each feature. The features are then ranked by their relevance score and either the top $K$ features or the features with score larger than the threshold $\tau$ are kept. Where, $K$ or $\tau$ is the user specified hyper-parameter.
 
+Types of scores:
+- **<u>Univariate Score</u>:**
+A relavance score can be computed for each features individually. i.e without looking at other features.
+
+- **<u>Multivariate Score</u>:**
+It looks like for the interactions among features. The basic idea is to remove the highly co-related features. In extreme case both features are identical values for all datapoints.
+
+#### 10.1.1 Univariate Score
+There are multiple filter methods such as Chi-squared score etc. Here, we discuss the easiest one — *variance score*.
+
+**Variance Score:**
+In general, variance is the average of the square of the deviation from the mean.
+
+$$variance = s^2 = \frac{\sum y^2}{n}$$
+Where, $y$ &rarr; difference between a value and mean of all the values.
+
+Variance for the feature $j$ would be,
+$$Var(x_j)=\frac{\sum_{i=1}^{n}x_j}{n}$$
+
+![](images/car_dataset.png)
+<center><i>Figure 14: Car dataset</i></center>
+
+In the above dataset, we calculate the variance of the features and find out that the top 2 features in terms of variance score are *horsepower* and *torque*.
+
+**Chi-square Score:**
+Chi-square score is used in statistics to test the independence of two events. It assumes that both the features variable and target variable are categorical.
+
+#### 10.1.2 Multivariate Selection
+Here, we find out if one feature affects another
+
+**Correlation-based Feature Selection:**
+It calculates the correlation between each feature in the dataset and a target variable. It ranks features subsets according to a correlation based *heuristic evaluation function*. General idea is that we have to find features, that have high correlation with the *class* but are not correlated with each other.
+
+**Fisher Score:**
+Finding subset of features where the between-class variance of features should be large, while within-class variance of feature should be small.
+
+For a given dataset $\{x_i, y_i\}_{i=1}^{N}$
+Where, 
+- $x_i\in R^M$ 
+- $y_i\in \{1,2,...,c\}$, represents the class which $x_i$ belongs to.
+- $N$ &rarr; Number of samples
+- $M$ &rarr; Number of features
+- $f_1, f_2, ..., f_m$ &rarr; $M$ features
+
+The fisher score $F$ os the i-th feature $(f_i)$ is,
+
+$$
+\begin{align}
+F(f_i)&=\frac{\sum_{k=1}^{c}n_k(\mu_i^k-\mu_i)^2}{\sum_{k-1}^{c}\sum_{y_i=k}(f_{i,j}-\mu_i^k-\mu_i^k)^2}\\
+&=\frac{\sum_{k=1}^{c}n_k(\mu_i^k-\mu_i)^2}{\sum_{n_k}(\sigma_i^k)^2}\\
+&=\frac{\sum_{k=1}^{c}n_k(\mu_i^k-\mu_i)^2}{\sigma_i^2}
+\end{align}
+$$
+
+Where, 
+- $n_k$ &rarr; number of samples in class $k$
+- $\mu_i^k$ &rarr; mean of feature $f_i$ in certain k-th class
+- $\sigma_i^k$ &rarr; standard deviation of feature $f_i$ in certain k-th class
+- $f_{i,j}$ $rarr; value of feature $f_i$ in sample (or observation) $x_j$
+
+**Finding best subset of features of size $K$:**
+Let, 
+- $algo$ &rarr; learning algorithm
+- $X, y$ &rarr; training set
+- $K$ &rarr; desired number of features 
+
+For each subset $s$ of features of size $K$, learn a model with parameters using the proposed subset of feature $s$ with data matrix $X[:,s]$ & store the score in an array indexed by $s$.
+
+$$score[s] \longleftarrow \underset{\theta}{min} \hspace{3pt}L(\theta;X[:,s],y)$$
+
+Finally, return the subset $s$ with the best score from our array.
 
