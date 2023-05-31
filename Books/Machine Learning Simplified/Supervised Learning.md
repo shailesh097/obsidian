@@ -1,5 +1,4 @@
 There are two types of problems in supervised learning:
-ooooooooooooooooooooooooo
 - Regression
 - Classification
 
@@ -73,7 +72,7 @@ In our case, we are going to give $k=1$ which will calculate 1 nearest neighbour
 ### 4.4. Visualizing the Decision Regions
 In the aforementioned Figure 1, each region/cluster of the same color is called *decision region* for each class and the curve that makes up the boundary between these decision regions is called *decision boundary*.
 
-## 5. Evulating the Prediction Function
+## 5. Evaluating the Prediction Function
 We start by defining a numeric metric that tells us how good a classifier function is on a data set. First, we evulate our classifier function on the dataset we trained it on and secondly, we test it on a new dataset.
 
 We find out that our function performed exceptionally well on our training dataset. Which is not a realistic estimation of real world error. This problem is called overfitting.
@@ -755,3 +754,40 @@ $$score[s] \longleftarrow \underset{\theta}{min} \hspace{3pt}L(\theta;X[:,s],y)$
 
 Finally, return the subset $s$ with the best score from our array.
 
+**Step Forward Feature Selection:**
+Let, $s \leftarrow \emptyset$, represents the set of features we have selected(empty at first).
+- For $i=1...K$
+//Identifying the best features to add
+- For $j \in \{1,...,p\} \textbackslash s$,
+	- Let, $s' \leftarrow S \cup \{J\}$ be proposed feature set with feature $j$ added.
+	- Fit a model using algo to the feature selected training set $X[:,s'],y$
+	- Sotre the training error in an array score indesed by $s$.
+- Identify the $j$ with the best score, and add $j$ to the feature set, i.e let $s \leftarrow S \cup \{J\}$.
+- Return $s$, the best subset of features of size $k$ chosen via greedy step forward selection.
+
+### 10.2 Search Methods
+These methods are used to find the best possible subset of features of size $K$ for particular learning algorithm. However, these methods have a drawback — computation. 
+To counter this instead of *exact search methods* we can use *approximate search methods*: *forward-selection* and *backward-selection* algorithms.
+
+- **Step forward feature selection:** 
+	- Start with empty set
+	- At each iteration, identify the most relevant feature and add to the set.
+
+- **Step Backward feature selection:**
+	- Start with set of all features 
+	- At each iteration, it identifies the least relevant feature and eliminates it form the set.
+
+**Recursive Feature Elimination:**
+It is same as Step-backward feature selection except for each iteration it may remove multiple features at once.
+
+### 10.3 Embedded Methods
+Embedded methods learn which features best contribute to the accuracy of the model while the model is being created.
+
+## 11. Data Preparation
+Methods of data pre-processing data:
+- Data Cleaning
+- Encoding
+- Feature Engineering
+- Feature Scaling
+- Class Label Imbalance
+ 
