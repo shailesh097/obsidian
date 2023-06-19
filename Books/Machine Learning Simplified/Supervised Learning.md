@@ -790,4 +790,144 @@ Methods of data pre-processing data:
 - Feature Engineering
 - Feature Scaling
 - Class Label Imbalance
- 
+
+### 11.1 Data Cleaning
+#### 11.1.1 Dirty Data
+**Incorrect Data:**
+Clearly incorrect data such as *spelling* or *syntax errors*. If “california” is spelled “California” in some columns then they will be treated differently by the model.
+
+One way to find out the spelling error in a column is by looking at the set of unique characters in that column.
+
+**Improperly Formatted Data:**
+Standardizing the format of data such as date is essential. The model will treat date with sufficient format differently.
+
+E.g: 19-05-2020 and 10/05/2020 will be treated differently.
+
+**Duplicated Data:**
+Duplicate rows can lead the model to perform poorly. However, some duplicate data may be genuine. There is no way to know if the duplicate data is genuine except using the external sources by looking if two purchases were in fact made from the same place and same product has been bought in the same day.
+
+**Irrelevant Features or Data:**
+- **Irrelevant Features(Columns):**
+	The data set of purchase history may contain which browser the user used to order the item. This information is irrelevant to the prediction task. 
+- **Irrelevant Rows:**
+	Suppose the task is to predict the purchase history of US but the data set contains the data of other countries as well which is irrelevant to the prediction task.
+
+**Missing Data:**
+If there are less number of missing value data points then we can remove the entire data point.
+
+However, filling the missing value with a “good” value is more desirable. There are two data filling procedures 
+- **Exact**:
+	If  an address is missing but we have ZIP code we can fill the exact address with the help of ZIP code
+
+- **Imputed**:
+	For numeric data, typically the mean or the median of the non-missing values of the feature is used.
+
+For categorical value, we use mode or most likely value.
+
+In some case, a feature named `order_total_was_missing` can be created which includes binary value—provides more information to the learning algorithm which may help for good prediction.
+
+#### 11.1.2 Outliers
+A single data point or observation which is significantly different from other observations.
+
+In normal distribution, a feature value $x_j^i$ with value $x_j^i \lt \mu^{(j)} -k\cdot\sigma^{(j)}$ or $x_j^i \gt \mu^{(j)} + k \cdot \sigma^{(j)}$ is considered as outlier. Typically $k=3$ is chosen.
+
+If the column cannot contain a negative value then the observations outside $(\mu_3\cdot\sigma)$ would be considered outlier.
+
+### 11.2 Feature Transformation
+Transform feature to understand form for the algorithm.
+
+#### 11.2.1 Feature Encoding
+Change string or categorical data into machine readable numerical format. For binary categorical variable (yes & no) use 0 & 1.
+
+For non binary categorical variable map each category variable to  number such as 0, 1, 2, ….. . If the order of feature value is important than directly substituting the mapped value in place of the categorical variable is better.
+
+However, if the order is not important then it is better to transform a categorical feature with $K$ categories into $K$ features. As shown in the table below, taking 1 for that category and 0 for all other categories for that feature’s column.
+
+![](images/categorical_features_encoding.png)
+<center><i>Fig 15: Numerical encoding of categorical features</i></center>
+
+#### 11.2.2 Feature Scaling:
+Features which have much longer numerical values are changed or scaled or normalized. E.g. Salary feature contains large data such as &euro;30,000 to &euro;430,000.
+
+Two popular data scaling approaches are:
+
+- **Feature Standardization(z-scale normalization):**
+In *Feature Standardization* feature value are re-scaled to have a mean of $\mu=0$ and standard deviation $\sigma=1$, 
+i.e. standardized feature is calculated as,
+
+$$x_i^{(j)}=\frac{x_i^{(j)}-\mu^{(j)}}{\sigma^{(j)}}$$
+
+- **Feature Normalization:**
+In *Feature Normalization*, the feature values are converted into specific range, typically between 0 and 1.
+
+Normalized feature is calculated as,
+
+$$\hat x_i^{(j)}=\frac{x_i^{(j)}-min^{(j)}}{max^{(j)}-min^{(j)}}$$
+
+In many cases, standardization is used as default feature scaling method. But, we never know which to use unless we try both.
+
+In some features which have outliers squeezing it to very small range can help with that.
+
+### 11.3 Feature Engineering
+#### 11.3.1 Feature Binning
+Convert numerical(either continuous or discrete) feature into categorical feature represented by a set of ranges or bins.
+
+E.g. Chopping `age` in different groups,
+
+$young \in [25-34], middle \in[35-44], old\in[45-54]$
+
+This process helps with overfitting.
+
+Some popular binning methods are:
+1. Equal width Binning
+2. Quantile Binning
+<br>
+- **Domain Knowledge Binning:**
+
+
+- **Equal Width Binning:**
+Dividing the ranges of values of a feature into bins with equal width. Specify number of bins as hyper-parameter $K$. 
+
+Then, width of each bin,
+$$w=[\frac{max^{(j)}-min^{(j)}}{K}]$$
+
+Then, the bins are,
+
+$Bin1:[min,min+w-1]$
+$Bin2:[min+w, min + 2w -1]$
+$...$
+$BinK:[min+(k-1)\cdot w, max]$
+
+#### 11.3.2 Ratio Features
+While engineering features, we can divide one feature with another feature to create a new feature.
+
+For e.g. In a table we have two features `Customers` and `Visitors`. We can create a new feature `Conversion_ratio` by dividing `Customers` by `Visitors`.
+
+$Conversion\hspace{3pt}Ratio = \frac{Customers}{Visitors}$
+
+We can use conversion ratio feature to increase the performance of ML models.
+
+### 11.4 Handling Class Label Imbalance
+Suppose, we have a dataset of bank transfers. The target variable has two classes—`fraud` and `legal` transaction. If the amount of fraud transaction is extremely low compared to the legal transactions in the provided dataset then we can say that these two classes are imbalanced.
+
+We call `fraud` to be *minority class* and `legal` to be *majority* class. Imbalanced classes can create problems in ML classification.
+
+One of the ways to balance these classes is by using oversampling techniques.
+
+#### 11.4.1 Oversampling
+Oversampling technique tries to balance the minority and majority classes by artificially increasing the number of observations in the minority class.
+
+We can increase the number of minority classes to match with the majority class by reusing the available minority class to match with the majority class as shown in Figure below.
+
+![](images/oversampling_minority_class.png)
+<center><i>Fig 16: Oversampling Minority Class</i></center>
+
+Another method is called (SMOTE) whichh synthetically creates data for the minority class.
+
+#### 11.4.2 Synthetic Minority Oversampling Technique(SMOTE)
+
+![](images/SMOTE_illustration.png)
+<center><i>Figure 17: Illustration of SMOTE algorithm to create a synthetic dataset with balanced classes</i></center>
+
+In high level, the working of SMOTE algorithm is used by drawing lines between minority class data points and filling with randomly generated data points in between those data points.
+
