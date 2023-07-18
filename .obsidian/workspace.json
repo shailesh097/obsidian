@@ -4,36 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "cc88ff00cdab41eb",
+        "id": "334ba90a88f38d37",
         "type": "tabs",
         "children": [
           {
-            "id": "a8b8cab789d54ab8",
+            "id": "2d65e1f6c86207bf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Books/Machine Learning Simplified/Supervised Learning.md",
                 "mode": "source",
-                "source": true
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "2a9975a35335fa1c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "3b33d668069cc1f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books/Machine Learning Simplified/Supervised Learning.md",
-                "mode": "preview",
-                "source": true
+                "source": false
               }
             }
           }
@@ -95,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.5,
-    "collapsed": true
+    "width": 278.5
   },
   "right": {
     "id": "30837030fdbe39cf",
@@ -183,12 +164,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a8b8cab789d54ab8",
+  "active": "2d65e1f6c86207bf",
   "lastOpenFiles": [
+    "Books/Mathematics For Machine Learning/Introduction.md",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
+    "Books/Mathematics For Machine Learning",
     "Books/Machine Learning Simplified/images/SMOTE_illustration.png",
     "Books/Machine Learning Simplified/images/oversampling_minority_class.png",
     "images/catego.md",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
     "images",
     "Books/Machine Learning Simplified/images/categorical_features_encoding.png",
     "Documents to upload/Docs.md",
@@ -205,7 +188,6 @@
     "Books/Machine Learning Simplified/images/local_global_solution.png",
     "Books/Machine Learning Simplified/images/non-convex_gradient.png",
     "Books/Machine Learning Simplified/images/convex_gradient.png",
-    "Books/Machine Learning Simplified/images/first_iteration_slope.png",
     "Books/Machine Learning Simplified/images",
     "Templates",
     "Books/Machine Learning Simplified",
