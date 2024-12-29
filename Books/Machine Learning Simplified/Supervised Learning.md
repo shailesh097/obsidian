@@ -9,7 +9,7 @@ In classification problems, an unknown category called *class label* is to be pr
 In regression, we try to predict an unknown number based on the set of known variables. For example, regression can be used to predict the price of a house based on the features i.e crime rate, ocean proximity, floor location, floor  etc. Here, the features such as crime rate, ocean proximity, floor location, floor size can be called as *input variables*. Furthermore, the value to be predicted can be called as *label* or *target variable* or *class label* or *output variable*. 
 
 ## 3. Machine Learning Pipelines
-There are 4 major steps in the machhine learning pipelines:
+There are 4 major steps in the machine learning pipelines:
 
 - Step I &rarr; Data Extraction
 - Step II &rarr; Data Preparation

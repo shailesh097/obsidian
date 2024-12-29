@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "334ba90a88f38d37",
+        "id": "19f98758128dd606",
         "type": "tabs",
         "children": [
           {
-            "id": "2d65e1f6c86207bf",
+            "id": "0083b74ff0f7ee09",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Machine Learning Simplified/Supervised Learning.md",
+                "file": "1. Brain/Java/Final.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Final"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -70,7 +78,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -101,7 +111,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Supervised Learning"
             }
           },
           {
@@ -113,7 +125,9 @@
                 "file": "Books/Machine Learning Simplified/Supervised Learning.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Supervised Learning"
             }
           },
           {
@@ -124,7 +138,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -134,7 +150,9 @@
               "type": "outline",
               "state": {
                 "file": "Books/Machine Learning Simplified/Supervised Learning.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Supervised Learning"
             }
           },
           {
@@ -142,7 +160,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
@@ -150,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 275.5,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -164,24 +184,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2d65e1f6c86207bf",
+  "active": "0083b74ff0f7ee09",
   "lastOpenFiles": [
-    "Books/Mathematics For Machine Learning/Introduction.md",
+    "1. Brain/Java/Abstract Class.md",
+    "2. Projects/DDM Akka.md",
+    "1. Brain/Java/Final.md",
+    "Templates/Block.md",
+    "Templates/Underlined Heading.md",
+    "Templates/Aligned Equation.md",
+    "Templates/Evualte Equation.md",
+    "Templates/Figure Description.md",
+    "Templates/Space.md",
+    "1. Brain/Java",
+    "1. Brain/Untitled.md",
     "Books/Machine Learning Simplified/Supervised Learning.md",
+    "images/catego.md",
+    "1. Brain",
+    "2. Projects",
+    "Books/Mathematics For Machine Learning/Introduction.md",
     "Books/Mathematics For Machine Learning",
     "Books/Machine Learning Simplified/images/SMOTE_illustration.png",
     "Books/Machine Learning Simplified/images/oversampling_minority_class.png",
-    "images/catego.md",
     "images",
     "Books/Machine Learning Simplified/images/categorical_features_encoding.png",
     "Documents to upload/Docs.md",
     "Documents to upload",
     "Books/Machine Learning Simplified/images/car_dataset.png",
-    "Templates/Figure Description.md",
-    "Templates/Underlined Heading.md",
-    "Templates/Space.md",
-    "Templates/Evualte Equation.md",
-    "Templates/Aligned Equation.md",
     "Books/Machine Learning Simplified/images/bias_complexity_relation.png",
     "Books/Machine Learning Simplified/images/variance_complexity_relation.png",
     "Books/Machine Learning Simplified/images/model_error.png",
