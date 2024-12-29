@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Brain/Java/Final.md",
+                "file": "2. Projects/DDM Akka/Actors/Gurdian.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final"
+              "title": "Gurdian"
             }
           }
         ]
@@ -87,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 200
   },
   "right": {
     "id": "30837030fdbe39cf",
@@ -186,9 +186,12 @@
   },
   "active": "0083b74ff0f7ee09",
   "lastOpenFiles": [
-    "1. Brain/Java/Abstract Class.md",
-    "2. Projects/DDM Akka.md",
+    "2. Projects/DDM Akka/Main.md",
+    "2. Projects/DDM Akka/Actors/Gurdian.md",
+    "2. Projects/DDM Akka/Actors",
+    "2. Projects/DDM Akka",
     "1. Brain/Java/Final.md",
+    "1. Brain/Java/Abstract Class.md",
     "Templates/Block.md",
     "Templates/Underlined Heading.md",
     "Templates/Aligned Equation.md",
@@ -217,8 +220,6 @@
     "Books/Machine Learning Simplified/images/non-convex_gradient.png",
     "Books/Machine Learning Simplified/images/convex_gradient.png",
     "Books/Machine Learning Simplified/images",
-    "Templates",
-    "Books/Machine Learning Simplified",
-    "Books"
+    "Templates"
   ]
 }
