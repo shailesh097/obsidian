@@ -1,8 +1,10 @@
 {
-  "accentColor": "",
+  "accentColor": "#3275b8",
   "cssTheme": "Blue Topaz",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "obsidian"
-  ]
+    "obsidian",
+    "code-block-scheme"
+  ],
+  "theme": "obsidian"
 }

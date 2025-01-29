@@ -1,0 +1,11 @@
+/* One Dark-inspired code block styling */
+pre, code {
+    background-color: #282c34; /* Dark background */
+    color: #abb2bf; /* Default text color */
+}
+.cm-s-obsidian span.cm-keyword { color: #c678dd; } /* Keywords */
+.cm-s-obsidian span.cm-operator { color: #56b6c2; } /* Operators */
+.cm-s-obsidian span.cm-variable { color: #e06c75; } /* Variables */
+.cm-s-obsidian span.cm-string { color: #98c379; } /* Strings */
+.cm-s-obsidian span.cm-comment { color: #5c6370; } /* Comments */
+
