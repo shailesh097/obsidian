@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Brain/Arch Install/Arch Install.md",
+                "file": "1. Brain/Linux/Fedora Gnome.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arch Install"
+              "title": "Fedora Gnome"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -186,13 +187,14 @@
   },
   "active": "f4c797a51fa96683",
   "lastOpenFiles": [
-    "1. Brain/Arch Install/Arch Commands.md",
-    "1. Brain/Arch Install/Arch Install.md",
+    "1. Brain/Linux/Arch Install.md",
+    "1. Brain/Linux/Fedora Gnome.md",
+    "1. Brain/Linux/Arch Commands.md",
+    "Books/Machine Learning Simplified/Supervised Learning.md",
     "2025-01-16.md",
     "Untitled.canvas",
-    "Books/Machine Learning Simplified/Supervised Learning.md",
     "1. Brain/Java/Abstract.md",
-    "1. Brain/Arch Install",
+    "1. Brain/Linux",
     "Untitled",
     "Untitled.md",
     "1. Brain/Nvchad",

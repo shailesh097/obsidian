@@ -14,6 +14,8 @@ Install these programs while installing Arch Linux:
 15. conky
 16. yay(for aur repos)
 17. polybar(instead of i3 statusbar)
+18. lxappearance(customizing theme of gtk applications)
+19. flameshot(screenshot software)
 
 - Change default terminal to kitty
 - change default shell to fish
@@ -33,3 +35,7 @@ Install these programs while installing Arch Linux:
 - Setup rofi launcher(type-2, style-8)
 - disable dmenu in i3 setup file
 - uninstall dmenu
+- set the followin fonts
+	- Interface Text - gg sans Normal, Bold
+	- Document Text - gg sans Normal
+	- Monospace Text - DM Mono
