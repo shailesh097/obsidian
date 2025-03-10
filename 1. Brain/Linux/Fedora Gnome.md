@@ -4,7 +4,7 @@
 	- Coverflow alt-tab
 	- dash to dock
 	- netspeed
-	- transparent top bar (Adjustable transparency)(ftpix)
+	- blur-my-shell
 	- workspace indicator(gcampax)
 	- searchlight
 

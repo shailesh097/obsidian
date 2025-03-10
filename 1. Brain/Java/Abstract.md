@@ -6,17 +6,11 @@ An **abstract class** in Java is a class that cannot be instantiated directly. I
 
 ### Key Features of an Abstract Class:
 
-1. **Cannot Be Instantiated**:
+1. **Cannot Be Instantiated**: You cannot create an object of an abstract class directly. It is meant to serve as a blueprint for other classes.
 
-- You cannot create an object of an abstract class directly. It is meant to serve as a blueprint for other classes.
+2. **Abstract Methods**: An abstract class can contain **abstract methods**—methods that are declared but not defined. These methods must be implemented by subclasses.
 
-2. **Abstract Methods**:
-
-- An abstract class can contain **abstract methods**—methods that are declared but not defined. These methods must be implemented by subclasses.
-
-3. **Concrete Methods**:
-
-- An abstract class can also contain **concrete methods**—methods with a body (implementation). These methods can be used directly by subclasses.
+3. **Concrete Methods**: An abstract class can also contain **concrete methods**—methods with a body (implementation). These methods can be used directly by subclasses.
 
 **Example:**
 ```java
