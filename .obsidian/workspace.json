@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Brain/Golang/3.Ifelseif.md",
+                "file": "1. Brain/Neovim/Plugins.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.Ifelseif"
+              "title": "Plugins"
             }
           }
         ]
@@ -187,21 +187,25 @@
   },
   "active": "b84d36bbc443088d",
   "lastOpenFiles": [
-    "1. Brain/Golang/4.Looping.md",
-    "1. Brain/Golang/3.Ifelseif.md",
-    "1. Brain/Golang/2.Variable and Constant.md",
-    "1. Brain/Golang/1.Golang101.md",
+    "1. Brain/Docker/2. docker commands.md",
+    "1. Brain/Neovim/Plugins.md",
+    "1. Brain/Neovim",
+    "Untitled",
+    "1. Brain/Docker/1. Docker101.md",
+    "1. Brain/Git/Git - Branching Process.md",
+    "Learning/Golang/3.Ifelseif.md",
+    "Learning",
+    "Learning/Golang/4.Looping.md",
+    "Learning/Golang/2.Variable and Constant.md",
+    "Learning/Golang/1.Golang101.md",
     "Untitled.canvas",
-    "1. Brain/Golang",
+    "Learning/Golang",
     "1. Brain/Untitled.md",
     "1. Brain/Linux/Arch Commands.md",
     "1. Brain/Linux/Arch Install.md",
     "1. Brain/Linux/Fedora Gnome.md",
-    "1. Brain/Docker/1. Docker101.md",
-    "1. Brain/Docker/2. docker commands.md",
-    "1. Brain/Git/Git - Branching Process.md",
-    "1. Brain/Java/Abstract.md",
-    "1. Brain/Java/Final.md",
+    "Learning/Java/Abstract.md",
+    "Learning/Java/Final.md",
     "2025-01-16.md",
     "1. Brain/Docker",
     "1. Brain/Random.md",
@@ -219,11 +223,7 @@
     "Templates/Evualte Equation.md",
     "Templates/Figure Description.md",
     "Templates/Space.md",
-    "1. Brain/Java",
     "images/catego.md",
-    "1. Brain",
-    "2. Projects",
-    "Books/Mathematics For Machine Learning/Introduction.md",
     "Books/Machine Learning Simplified/images/SMOTE_illustration.png",
     "Books/Machine Learning Simplified/images/oversampling_minority_class.png",
     "Books/Machine Learning Simplified/images/categorical_features_encoding.png",
