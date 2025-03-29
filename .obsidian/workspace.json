@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4bb47fd14440f66d",
+        "id": "9a544dd4e1350e9f",
         "type": "tabs",
         "children": [
           {
-            "id": "bf63fa474e0c4432",
+            "id": "67242d776f87cb82",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Learning/Golang/3.DataTypes.md",
-                "mode": "source",
+                "file": "Learning/Golang/6.Arrays and Slices.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.DataTypes"
+              "title": "6.Arrays and Slices"
             }
           }
         ]
@@ -185,13 +185,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bf63fa474e0c4432",
+  "active": "67242d776f87cb82",
   "lastOpenFiles": [
-    "Learning/Golang/8.Functions.md",
-    "Learning/Golang/3.DataTypes.md",
-    "Learning/Golang/4.Ifelseif.md",
-    "Learning/Golang/7.Switch.md",
+    "Learning/Golang/5.Looping.md",
+    "Learning/Golang/4.If else if.md",
+    "Learning/Golang/3.Data Types.md",
     "Learning/Golang/2.Variable and Constant.md",
+    "Learning/Golang/1.Golang101.md",
+    "Learning/Golang/6.Arrays and Slices.md",
+    "Learning/Golang/7.Switch.md",
+    "Learning/Golang/8.Functions.md",
     "Templates/Table.md",
     "Templates/Aligned Equation.md",
     "Templates/Block.md",
@@ -199,9 +202,6 @@
     "Templates/Figure Description.md",
     "Templates/Underlined Heading.md",
     "Templates/Space.md",
-    "Learning/Golang/5.Looping.md",
-    "Learning/Golang/6.Arrays.md",
-    "Learning/Golang/1.Golang101.md",
     "1. Brain/Neovim/Plugins.md",
     "1. Brain/Docker/2. docker commands.md",
     "1. Brain/Neovim",
