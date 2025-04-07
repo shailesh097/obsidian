@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Learning/Golang/3.Data Types.md",
+                "file": "Learning/Golang/11. Pointers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.Data Types"
+              "title": "11. Pointers"
             }
           }
         ]
@@ -187,8 +187,8 @@
   },
   "active": "aeb84dab2a7ccc98",
   "lastOpenFiles": [
-    "Learning/Golang/11. Pointers.md",
     "Learning/Golang/3.Data Types.md",
+    "Learning/Golang/11. Pointers.md",
     "Learning/Golang/2.Variable and Constant.md",
     "Learning/Golang/1.Golang101.md",
     "Learning/Golang/10.Struct and Interface.md",
