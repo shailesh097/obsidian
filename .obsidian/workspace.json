@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "75fc0cc2e5946fe4",
+        "id": "783c82f3259c0f60",
         "type": "tabs",
         "children": [
           {
-            "id": "aeb84dab2a7ccc98",
+            "id": "0556ca2e5b8978d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -70,8 +70,8 @@
             "state": {
               "type": "starred",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "starred"
             }
           },
           {
@@ -162,8 +162,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
@@ -176,6 +176,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -185,45 +186,45 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ea799d75a2b94847",
+  "active": "0556ca2e5b8978d3",
   "lastOpenFiles": [
-    "Books/Let's Go",
-    "Learning/Golang/14.Generics.md",
-    "Learning/Golang/13. Channels.md",
-    "Learning/Golang/12.Goroutines.md",
-    "Learning/Golang/11. Pointers.md",
-    "Learning/Golang/3.Data Types.md",
     "Learning/Golang/10.Struct and Interface.md",
+    "Learning/Golang/8.Functions.md",
+    "Learning/Golang/6.Arrays and Slices.md",
+    "Learning/Golang/11. Pointers.md",
+    "Learning/Golang/9.Switch.md",
+    "Learning/Golang/5.Looping.md",
+    "1. Brain/Go Conventions/Deleting Elements from Slice.md",
+    "1. Brain/Go Conventions/1. Table of Contents.md",
+    "1. Brain/Linux/Arch Commands.md",
+    "1. Brain/Go Conventions",
+    "1. Brain/Linux/Arch Install.md",
+    "1. Brain/Linux/Fedora Gnome.md",
+    "1. Brain/Neovim/Plugins.md",
+    "Untitled.canvas",
+    "Learning/Golang/3.Data Types.md",
+    "Learning/Golang/4.If else if.md",
     "Learning/Golang/2.Variable and Constant.md",
     "Learning/Golang/1.Golang101.md",
-    "Learning/Golang/7.Map.md",
-    "Learning/Golang/4.If else if.md",
-    "Learning/Golang/6.Arrays and Slices.md",
-    "Learning/Golang/5.Looping.md",
+    "Learning/Java/Final.md",
+    "Learning/Java/Abstract.md",
+    "Books/Let's Go/2. Servemux.md",
+    "Test.md",
+    "Test2.md",
     "1. Brain/Docker/1. Docker101.md",
+    "Learning/Golang/14.Generics.md",
     "1. Brain/Docker/2. docker commands.md",
-    "2. Projects/DDM Akka/Main.md",
     "Books/Machine Learning Simplified/Supervised Learning.md",
-    "Learning/Golang/8.Functions.md",
-    "Learning/Golang/9.Switch.md",
-    "Templates/Table.md",
-    "Templates/Aligned Equation.md",
-    "Templates/Block.md",
-    "Templates/Evualte Equation.md",
-    "Templates/Figure Description.md",
-    "Templates/Underlined Heading.md",
-    "Templates/Space.md",
+    "Test",
+    "Books/Let's Go/1. Fixed Path and Subtree patterns.md",
+    "Books/Let's Go",
     "1. Brain/Neovim",
-    "Untitled",
     "Learning",
-    "Untitled.canvas",
     "Learning/Golang",
     "1. Brain/Docker",
     "1. Brain/Git",
     "1. Brain/Linux",
     "1. Brain/Nvchad",
-    "2. Projects/DDM Akka/Actors",
-    "2. Projects/DDM Akka",
     "Books/Machine Learning Simplified/images/SMOTE_illustration.png",
     "Books/Machine Learning Simplified/images/oversampling_minority_class.png",
     "Books/Machine Learning Simplified/images/categorical_features_encoding.png",
